@@ -130,14 +130,15 @@ case $1 in
         echo "AM43xx" > etc/hostname
         ;;
 
+	"artik520")
     "artik530")
-        echo "Building ARTIK530 root filesystem"
-        cp etc/inittab-artik530 etc/inittab
-        echo "ARTIK530" > etc/hostname
+        echo "Building ARTIK root filesystem"
+        cp etc/inittab-artik etc/inittab
+        echo $1 > etc/hostname
         ;;
 
     *)
-        echo "Usage: $0 [versatile|vexpress|fvp|rpi3|poplar|hikey|hikey960|mt8173-evb|dra7xx|am43xx|artik530]"
+        echo "Usage: $0 [versatile|vexpress|fvp|rpi3|poplar|hikey|hikey960|mt8173-evb|dra7xx|am43xx|artik520|artik530]"
         exit 1
         ;;
 esac
