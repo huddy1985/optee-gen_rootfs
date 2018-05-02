@@ -15,6 +15,13 @@ STAGEDIR=${CURDIR}/stage
 BUILDDIR=${CURDIR}/build
 OUTFILE=${CURDIR}/rootfs-$1.cpio
 BUSYBOXDIR=${CURDIR}/../busybox
+CROSS_COMPILE=${CROSS_COMPILE}
+
+if [ "$CROSS_COMPILE" == "" ];then
+    echo "    Please switch to bash, set toolchains path"
+    echo "    bash:"
+    echo "        CROSS_COMPILE=/path/to/toolchains/bin/aarch64-linux-gnu-ARCH"
+fi
 
 if [ "$2" = "clean" -o "$2" = "distclean" ]; then
     echo "Cleaning"
